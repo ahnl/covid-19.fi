@@ -53,7 +53,6 @@ var cvfGraphOptions = {
 
 };
 
-graphTooltip1 = document.getElementById('graphTooltip1');
 Chart.defaults.LineWithLine = Chart.defaults.line;
 Chart.controllers.LineWithLine = Chart.controllers.line.extend({
     draw: function (ease) {
@@ -86,8 +85,22 @@ Chart.controllers.LineWithLine = Chart.controllers.line.extend({
 });
 
 
-var ctx = document.getElementById('canvas1').getContext('2d');
-var ctx2 = document.getElementById('canvas2').getContext('2d');
+var c1 = document.getElementById('canvas1');
+var c2= document.getElementById('canvas2');
+var graphTooltip1 = document.getElementById('graphTooltip1');
+var graphTooltip2 = document.getElementById('graphTooltip2');
+var ctx = c1.getContext('2d');
+var ctx2 = c2.getContext('2d');
+
+function clearTooltips() {
+    graphTooltip1.style.display = 'none';
+    graphTooltip2.style.display = 'none';
+   };
+
+c1.onmouseleave = clearTooltips;
+c1.ontouchleave = clearTooltips;
+c2.onmouseleave = clearTooltips;
+c2.ontouchleave = clearTooltips;
 
 var chart = new Chart(ctx, {
     type: 'LineWithLine',
@@ -112,7 +125,7 @@ var chart2 = new Chart(ctx2, {
         labels: ['29.01.', '30.01.', '31.01.', '01.02.', '02.02.', '03.02.', '04.02.', '05.02.', '06.02.', '07.02.', '08.02.', '09.02.', '10.02.', '11.02.', '12.02.', '13.02.', '14.02.', '15.02.', '16.02.', '17.02.', '18.02.', '19.02.', '20.02.', '21.02.', '22.02.', '23.02.', '24.02.', '25.02.', '26.02.', '27.02.', '28.02.', '29.02.', '01.03.', '02.03.', '03.03.', '04.03.', '05.03.', '06.03.', '07.03.', '08.03.'],
         datasets: [{
             label: 'Tartuntoja yhteensä',
-            data: [50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 2, 1, 1, 0, 5, 3, 30, 4, 7],
+            data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 3, 5, 6, 6, 12, 15, 19, 23, 30, 30],
             borderColor: '#2D5520',
 
             fill: true,
@@ -121,3 +134,12 @@ var chart2 = new Chart(ctx2, {
     },
     options: cvfGraphOptions
 });
+
+/*
+,
+    plugins: {
+        datasource: {
+            url: 'https://ahnl.github.io/coronavirus-finland/total.csv'
+        }
+    }
+    */
