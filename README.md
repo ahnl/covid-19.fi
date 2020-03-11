@@ -1,10 +1,23 @@
-# WIP: Tracking web app for Coronavirus in Finland 
+# Coronavirus in Finland - Web App
 
-- Statistics
-- News 
-- Safety instructions
+**This project is still work in progress and is not released yet, therefore daily data updates are not guaranteed.**
 
-... about coronavirus in Finland
+- [x] Mobile layout 
+- [x] Links to THL pages 
+- [x] Graphs 
+- [ ] Map graph (in progress) 
+- [ ] News
+- [ ] Desktop layout
+
+We also try to update Finnish coronavirus data daily to our repository:
+
+- [Daily confirmed cases](https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/day.csv)
+- [Total cumulative confirmed cases](https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/total.csv)
+- Regional data soon
+
+## Data sources
+- [Finnish National Institute for Health and Welfare](https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19)
+- [Helsingin Sanomat](https://dynamic.hs.fi/2020/corona-embed-finland/?verticalscroll=false&horizontalscroll=false)
 
 Please open an issue if you'd like to help :)!
 
