@@ -1,63 +1,84 @@
 <html>
-    <head>
-        <title>Koronavirus COVID-19 Suomessa</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1; user-scaleable=no">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="fonts/Finlandica/stylesheet.css">
-        <link rel="stylesheet" href="chartist-js/chartist.min.css">
-        <script src="chartist-js/chartjs-plugin-datasource.min.js"></script>
-        <script src="chartist-js/chartist.min.js"></script>
-        <link rel="stylesheet" href="main.css">
-    </head>
-    <body>
-        <div class="app">
-            <div class="header">
-                <h1>Koronavirus COVID-19 Suomessa</h1>
-                <i class="light">Tilastot päivitetty viimeeksi 9.3.</i>
-            </div>
 
-            <a class="resetLink" target="_blank" href="https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/taudit-ja-torjunta/taudit-ja-taudinaiheuttajat-a-o/koronavirus-covid-19">
-                <div class="linkButton">
-                    <div class="linkButtonText">
-                        Terveyden ja hyvinvoinnin laitoksen ajantasainen tietopaketti koronavirukseen liittyen
-                    </div>
-                    <div class="linkButtonIcon">
-                        <img src="images/open.svg">
-                    </div>
-                </div>
-            </a>
+<head>
+    <title>Koronavirus COVID-19 Suomessa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1; user-scaleable=no">
 
-            <div class="statisticCard">
-                Tapaukset yhteensä
-                <span class="statisticCardValue" id="total">37</span>
-            </div>
+    <link rel="stylesheet" href="fonts/Finlandica/stylesheet.css">
+    <link rel="stylesheet" href="scripts/chartist.min.css">
+    <script src="scripts/chartist.min.js"></script>
+    <script src="scripts/timeago.full.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
 
-            <div class="statisticCard">
-                Parantuneita yhteensä
-                <span class="statisticCardValue" id="healedTotal">12</span>
-            </div>
-
-            <hr>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-
-            <div class="graphCard">
-                <span class="graphCardTitle">
-                    Tapaukset
-                </span>
-                <canvas id="canvas1"  data-chart-tooltip="graphTooltip1"></canvas>
-            </div>
-            <div class="graphCardTooltip" id="graphTooltip1" style="display:none;"></div>
-
-            <div class="graphCard">
-                    <span class="graphCardTitle">
-                        Tapaukset yhteensä
-                    </span>
-                    <canvas id="canvas2" data-chart-tooltip="graphTooltip2"></canvas>
-                </div>
-                <div class="graphCardTooltip" id="graphTooltip2" style="display:none;"></div>
-
-            <script src="app.js"></script>
-            
+<body>
+    <div class="app">
+        <div class="header">
+            <h1>Koronavirus COVID-19 Suomessa</h1>
+            <i class="light" id="lastUpdated"></i>
         </div>
-    </body>
+
+        <a class="resetLink" target="_blank"
+            href="https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/taudit-ja-torjunta/taudit-ja-taudinaiheuttajat-a-o/koronavirus-covid-19">
+            <div class="linkButton">
+                <div class="linkButtonText">
+                    Terveyden ja hyvinvoinnin laitoksen ajantasainen tietopaketti koronavirukseen liittyen
+                </div>
+                <div class="linkButtonIcon">
+                    <img src="images/open.svg">
+                </div>
+            </div>
+        </a>
+
+        <div class="statisticCard">
+            Tapaukset yhteensä
+            <span class="statisticCardValue" id="total">37</span>
+        </div>
+
+        <div class="statisticCard">
+            Parantuneita yhteensä
+            <span class="statisticCardValue" id="healedTotal">12</span>
+        </div>
+
+        <hr>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+        <div class="graphCard">
+            <span class="graphCardTitle">
+                Tapaukset
+            </span>
+            <canvas id="canvas1" data-chart-tooltip="graphTooltip1"></canvas>
+        </div>
+        <div class="graphCardTooltip" id="graphTooltip1" style="display:none;"></div>
+
+        <div class="graphCard">
+            <span class="graphCardTitle">
+                Tapaukset yhteensä
+            </span>
+            <canvas id="canvas2" data-chart-tooltip="graphTooltip2"></canvas>
+        </div>
+        <div class="graphCardTooltip" id="graphTooltip2" style="display:none;"></div>
+
+        <hr>
+
+        <p>
+            <b>Tietolähteet:</b><br>
+            <a
+                href="https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19">Terveyden
+                ja hyvinvoinnin laitos</a>
+        </p>
+
+        <p>
+
+            Tämä sivusto on julkaistu avoimena lähdekoodina <a
+                href="https://github.com/ahnl/coronavirus-finland">GitHubiin</a>.
+
+        </p>
+
+
+        <script src="app.js"></script>
+
+    </div>
+</body>
+
 </html>
