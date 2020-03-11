@@ -49,7 +49,7 @@
 
         <!--
             Joku muu statistiikka myöhemmin.
-            
+
             Parantuneihin ei ole dataa (THL):
             "Vastaavasti taudista parantuneiden määrää on myös vaikea arvioida. Eri maat tulkitsevat parantumisen kriteerit eri tavoin, eikä esimerkiksi Suomessa anneta potilaiden yksityisyyden suojaamiseksi potilaiden tilasta tietoa julkisuuteen."
             https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19
@@ -78,18 +78,37 @@
         </div>
         <div class="graphCardTooltip" id="graphTooltip2" style="display:none;"></div>
 
+        <div class="map">
+
+                <div id="mapSvgContainer">
+
+                    </div>
+            
+                    <div id="mapTooltip" class="statisticCard" style="display: none;">
+                        <span id="mapTooltipArea">Alue</span>
+                        <span id="mapTooltipValue">0 tartuntaa</span>
+                    </div>
+
+        </div>
+
+     
+        
         <hr>
+
+
 
         <p>
             <b>Tietolähteet:</b><br>
             <a
                 href="https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19">Terveyden
-                ja hyvinvoinnin laitos</a>
+                ja hyvinvoinnin laitos</a><br>
+            <a
+                href="https://dynamic.hs.fi/2020/corona-embed-finland/?verticalscroll=false&horizontalscroll=false">Helsingin Sanomat</a>
         </p>
 
         <p>
 
-            Tämä sivusto on julkaistu avoimena lähdekoodina <a
+            Tämä sivusto ja tilastotieto on julkaistu avoimena lähdekoodina <a
                 href="https://github.com/ahnl/coronavirus-finland">GitHubiin</a>.
 
         </p>

@@ -48,7 +48,7 @@ h1 {
 .statisticCard {
     margin-top: 15px;
     border: 2px solid #2D5520;
-    width: calc(100% - 50px);
+    width: calc(100% - 54px);
     padding: 25px;
     color: #2D5520;
     font-size: 22px;
@@ -60,7 +60,7 @@ h1 {
 .graphCard {
     margin-top: 15px;
     border: 2px solid #2D5520;
-    width: 100%;
+    width: calc(100% - 4px);
     height: 150px;
     color: #2D5520;
     font-size: 22px;
@@ -122,4 +122,22 @@ p {
     color: #2D5520;
     font-size: 17px;
     margin-bottom: 35px;
+}
+
+#mapSvgContainer {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#mapTooltipArea {
+    font-size: 22px;
+    font-weight: bold;
+    display: block;
+}
+#mapTooltipValue {
+    font-size: 17px;
+    display: block;
+}
+.map {
+    margin-top: 30px;
 }
