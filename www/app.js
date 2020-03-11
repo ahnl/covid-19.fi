@@ -165,6 +165,7 @@ dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/d
 
 dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/total.csv', function(err, data) {
     if (!err) {
+        document.getElementById('total').innerHTML = data.data[data.data.length - 1];
         makeChart(ctx2, 'Tartunnat yhteensä', data);
     }    
 });
