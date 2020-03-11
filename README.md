@@ -9,6 +9,7 @@
 - [ ] News
 - [ ] Desktop layout
 - [ ] Maybe we can use [Helsingin Sanomat](https://interactive.hs.fi/arkku/public/generated/45474XYRRQuw/data.js) unpublished patient case data (?)
+
 We also try to update Finnish coronavirus data daily to our repository:
 
 - [Daily confirmed cases](https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/day.csv)
