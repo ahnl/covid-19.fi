@@ -167,7 +167,7 @@ function shadeColor(color, percent) {
 var regionData = {'uusimaa': 32, 'varsinais-suomi': 3, 'etela-karjala': 2};
 var regionNames = {'uusimaa': 'Uusimaa', 'varsinais-suomi': 'Varsinais-Suomi', 'etela-karjala': 'Etelä-Karjala'};
 function mapArea(property) {
-    document.getElementById('mapTooltip').style.display = 'block';
+  
     document.getElementById('mapTooltipValue').innerHTML = regionData[property] + ' tartuntaa';
     document.getElementById('mapTooltipArea').innerHTML = regionNames[property];
 
@@ -227,6 +227,7 @@ dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/d
 dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/total.csv', function(err, data) {
     if (!err) {
         document.getElementById('total').innerHTML = data.data[data.data.length - 1];
+        document.getElementById('mapTooltipValue').innerHTML = data.data[data.data.length - 1] + ' tartuntaa';
         makeChart(ctx2, 'Tartunnat yhteensä', data);
     }    
 });
