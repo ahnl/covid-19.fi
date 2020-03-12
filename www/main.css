@@ -83,9 +83,9 @@ h1 {
 
 .smallButton {
     margin-top: 15px;
-    border: 2px solid #2D5520;
+    background: #2D5520;
     padding: 10px;
-    color: #2D5520;
+    color: #CAE3C2;
     font-size: 17px;
     border-radius: 5px;
     display: table;
