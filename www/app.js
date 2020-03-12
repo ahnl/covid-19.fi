@@ -256,7 +256,7 @@ dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/r
     if (!err) {
         //data
         regionData = data;
-        
+
         var xhr = new XMLHttpRequest();
         xhr.open('GET', 'https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/www/suomi.svg', true);
         xhr.onload = function () {
@@ -265,7 +265,7 @@ dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/r
                 document.getElementById('mapSvgContainer').innerHTML = xhr.response;
                 for (var property in regionData) {
                     if (regionData.hasOwnProperty(property)) {
-    
+                        
                         var shade = -(2 * regionData[property]);
                         if (shade < -50) {
                             shade = -50;
