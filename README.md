@@ -5,9 +5,10 @@
 - [x] Mobile layout 
 - [x] Links to THL pages 
 - [x] Graphs 
-- [ ] Map graph (in progress) 
+- [x] Map graph
 - [ ] News
-- [ ] Desktop layout
+- [ ] Live updating (?)
+- [x] Desktop layout
 - [ ] Maybe we can use [Helsingin Sanomat](https://interactive.hs.fi/arkku/public/generated/45474XYRRQuw/data.js) unpublished patient case data (?)
 
 We also try to update Finnish coronavirus data daily to our repository:
