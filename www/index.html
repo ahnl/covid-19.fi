@@ -14,32 +14,35 @@
 
 <body>
     <div class="app">
-        <div class="header">
-            <h1>Koronavirus COVID-19 Suomessa</h1>
-            <i class="light" id="lastUpdated"></i>
-        </div>
 
-        <a class="resetLink" target="_blank"
-            href="https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/taudit-ja-torjunta/taudit-ja-taudinaiheuttajat-a-o/koronavirus-covid-19">
-            <div class="linkButton">
-                <div class="linkButtonText">
-                    Ajantasainen tietopaketti koronavirukseen liittyen<br>
-                    <i class="light">Terveyden ja hyvinvoinnin laitos</i>
-                </div>
-                <div class="linkButtonIcon">
-                    <img src="images/open.svg">
-                </div>
+        <div class="part">
+
+            <div class="header">
+                <h1>Koronavirus COVID-19 Suomessa</h1>
+                <i class="light" id="lastUpdated"></i>
             </div>
-        </a>
-        
-       
 
-        <div class="statisticCard">
-            Tapaukset yhteensä
-            <span class="statisticCardValue" id="total">n/A</span>
-        </div>
+            <a class="resetLink" target="_blank"
+                href="https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/taudit-ja-torjunta/taudit-ja-taudinaiheuttajat-a-o/koronavirus-covid-19">
+                <div class="linkButton">
+                    <div class="linkButtonText">
+                        Ajantasainen tietopaketti koronavirukseen liittyen<br>
+                        <i class="light">Terveyden ja hyvinvoinnin laitos</i>
+                    </div>
+                    <div class="linkButtonIcon">
+                        <img src="images/open.svg">
+                    </div>
+                </div>
+            </a>
 
-        <!--
+
+
+            <div class="statisticCard">
+                Tapaukset yhteensä
+                <span class="statisticCardValue" id="total">n/A</span>
+            </div>
+
+            <!--
             Joku muu statistiikka myöhemmin.
 
             Parantuneihin ei ole dataa (THL):
@@ -51,94 +54,98 @@
             <span class="statisticCardValue" id="healedTotal">n/A</span>
         </div>
 -->
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
 
-        <div class="graphCard">
-            <span class="graphCardTitle">
-                Tapaukset
-            </span>
-            <canvas id="canvas1" data-chart-tooltip="graphTooltip1"></canvas>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+            <div class="graphCard">
+                <span class="graphCardTitle">
+                    Tapaukset
+                </span>
+                <canvas id="canvas1" data-chart-tooltip="graphTooltip1"></canvas>
+            <div class="graphCardTooltip" id="graphTooltip1" style="display:none;"></div>
+
+            </div>
+
+            <div class="graphCard">
+                <span class="graphCardTitle">
+                    Tapaukset yhteensä
+                </span>
+                <canvas id="canvas2" data-chart-tooltip="graphTooltip2"></canvas>
+            <div class="graphCardTooltip" id="graphTooltip2" style="display:none;"></div>
+
+            </div>
         </div>
-        <div class="graphCardTooltip" id="graphTooltip1" style="display:none;"></div>
-
-        <div class="graphCard">
-            <span class="graphCardTitle">
-                Tapaukset yhteensä
-            </span>
-            <canvas id="canvas2" data-chart-tooltip="graphTooltip2"></canvas>
-        </div>
-        <div class="graphCardTooltip" id="graphTooltip2" style="display:none;"></div>
-
-        <div class="map">
+        <div class="part">
+            <div class="map">
 
                 <div id="mapSvgContainer">
 
-                    </div>
-            
-                    <div id="mapTooltip" class="statisticCard">
-                        <span id="mapTooltipArea">Koko suomi</span>
-                        <span id="mapTooltipValue">0 tartuntaa</span>
-                    </div>
+                </div>
 
-        </div>
+                <div id="mapTooltip" class="statisticCard">
+                    <span id="mapTooltipArea">Koko suomi</span>
+                    <span id="mapTooltipValue">0 tartuntaa</span>
+                </div>
 
-        <hr>
-
-        <a class="resetLink" target="_blank"
-        href="https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19">
-        <div class="linkButton">
-            <div class="linkButtonText">
-               Ajankohtaista koronaviruksesta
-               <br>
-               <i class="light">Terveyden ja hyvinvoinnin laitos</i>
             </div>
-            <div class="linkButtonIcon">
-                <img src="images/open.svg">
-            </div>
+
         </div>
-    </a>
-        
-    <a class="resetLink" target="_blank"
-    href="https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">
-    <div class="linkButton">
-        <div class="linkButtonText">
-           Maailmanlaajuiset tilastot
-           <br>
-           <i class="light">Johns Hopkins CSSE</i>
+        <div class="part">
+            <a class="resetLink" target="_blank"
+                href="https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19">
+                <div class="linkButton">
+                    <div class="linkButtonText">
+                        Ajankohtaista koronaviruksesta
+                        <br>
+                        <i class="light">Terveyden ja hyvinvoinnin laitos</i>
+                    </div>
+                    <div class="linkButtonIcon">
+                        <img src="images/open.svg">
+                    </div>
+                </div>
+            </a>
+
+            <a class="resetLink" target="_blank"
+                href="https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">
+                <div class="linkButton">
+                    <div class="linkButtonText">
+                        Maailmanlaajuiset tilastot
+                        <br>
+                        <i class="light">Johns Hopkins CSSE</i>
+                    </div>
+                    <div class="linkButtonIcon">
+                        <img src="images/open.svg">
+                    </div>
+                </div>
+            </a>
+
+
+            <hr>
+
+
+
+            <p>
+                <b>Tietolähteet:</b><br>
+                <a
+                    href="https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19">Terveyden
+                    ja hyvinvoinnin laitos</a><br>
+                <a href="https://dynamic.hs.fi/2020/corona-embed-finland/?verticalscroll=false&horizontalscroll=false">Helsingin
+                    Sanomat</a>
+            </p>
+
+            <p>
+
+                Tämä sivusto ja tilastotieto on julkaistu avoimena lähdekoodina <a
+                    href="https://github.com/ahnl/coronavirus-finland">GitHubiin</a>.
+
+            </p>
+
+            <i class="light">120320310P</i>
         </div>
-        <div class="linkButtonIcon">
-            <img src="images/open.svg">
-        </div>
+   
     </div>
-</a>
+    <script src="app.js"></script>
 
-    
-        <hr>
-
-
-
-        <p>
-            <b>Tietolähteet:</b><br>
-            <a
-                href="https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19">Terveyden
-                ja hyvinvoinnin laitos</a><br>
-            <a
-                href="https://dynamic.hs.fi/2020/corona-embed-finland/?verticalscroll=false&horizontalscroll=false">Helsingin Sanomat</a>
-        </p>
-
-        <p>
-
-            Tämä sivusto ja tilastotieto on julkaistu avoimena lähdekoodina <a
-                href="https://github.com/ahnl/coronavirus-finland">GitHubiin</a>.
-
-        </p>
-
-        <i class="light">120320310P</i>
-
-        <script src="app.js"></script>
-
-    </div>
 </body>
 
 </html>
