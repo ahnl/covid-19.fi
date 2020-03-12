@@ -221,9 +221,12 @@ document.getElementById('mapTooltipValue').addEventListener('animationend', func
     document.getElementById('mapTooltipValue').classList.add('animated', 'fadeInUp');
     document.getElementById('mapTooltipArea').classList.add('animated', 'fadeInUp');
  }
+
 function mapArea(property) {
 
-    mapAreaTooltipAnimations();
+    if (document.getElementById('mapTooltipArea').innerHTML != regionNames[property]) {
+        mapAreaTooltipAnimations();
+    }
     document.getElementById('mapTooltipValue').innerHTML = regionData[property] + ' tartuntaa';
     document.getElementById('mapTooltipArea').innerHTML = regionNames[property];
 
@@ -244,8 +247,11 @@ document.getElementById('mapSvgContainer').onmouseout = function() {
             document.getElementById('smap_' + regionName).style.opacity = '1';
         }
     }
-    mapAreaTooltipAnimations();
+    if (document.getElementById('mapTooltipArea').innerHTML != 'Koko suomi') {
+        mapAreaTooltipAnimations();
+    }
     document.getElementById('mapTooltipValue').innerHTML = total + ' tartuntaa';
+    
     document.getElementById('mapTooltipArea').innerHTML = 'Koko suomi';
 };
 
