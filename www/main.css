@@ -64,6 +64,42 @@ h1 {
     text-align: right;
 }
 
+.smallButtonIcon {
+    display: table-cell;
+    vertical-align: middle;
+    width: 17px;
+    margin-top: 2px;
+}
+
+.smallButtonText {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 7px; 
+    text-decoration: none;
+
+}
+
+
+
+.smallButton {
+    margin-top: 15px;
+    border: 2px solid #2D5520;
+    padding: 10px;
+    color: #2D5520;
+    font-size: 17px;
+    border-radius: 5px;
+    display: table;
+    transition-timing-function: ease-out;
+    transition: transform 0.2s;
+}
+.smallButton:hover {
+    transform: scale(1.05);
+}
+.smallButton:active {
+    transform: scale(0.98);
+    
+}
+
 .resetLink {
     text-decoration: none;
 }
