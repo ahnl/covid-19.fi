@@ -96,10 +96,13 @@ hr {
     margin-top: 27px;
 }
 .graphCardTooltip {
+   
     position: absolute;
-left: 50%;
--webkit-transform: translateX(-50%);
-transform: translateX(-50%);
+left: 0;
+right: 0;
+margin: auto;
+width: 110px;
+
 text-align: center;
 background-color: rgba(255,255,255);
 color: #2D5520;
@@ -107,6 +110,7 @@ font-size: 14px;
 padding: 5px 30px 5px 30px;
 border-radius: 3px;
 margin-top: -23px;
+animation-duration: 0.8s;
 }
 .graphCard canvas {
     background-color: #CAE3C2;
@@ -129,16 +133,22 @@ p {
     margin-bottom: 30px;
     width: 100%;
     -webkit-tap-highlight-color: transparent;
+   
+}
+#mapSvgContainer path {
+    transition: opacity 0.2s;
 }
 
 #mapTooltipArea {
     font-size: 22px;
     font-weight: bold;
     display: block;
+    animation-duration: 0.3s;
 }
 #mapTooltipValue {
     font-size: 17px;
     display: block;
+    animation-duration: 0.3s;
 }
 .map {
     margin-top: 30px;

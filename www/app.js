@@ -63,7 +63,9 @@ Chart.controllers.LineWithLine = Chart.controllers.line.extend({
                 bottomY = this.chart.scales['y-axis-0'].bottom;
 
             //console.log(this.chart.canvas);
+            document.getElementById(this.chart.canvas.dataset.chartTooltip).classList.remove('animated', 'fadeOutDown');
             document.getElementById(this.chart.canvas.dataset.chartTooltip).style.display = 'block';
+            document.getElementById(this.chart.canvas.dataset.chartTooltip).classList.add('animated', 'fadeInUp');
 
             // draw line
             ctx.save();
@@ -91,8 +93,10 @@ var graphTooltip2 = document.getElementById('graphTooltip2');
 
 
 function clearTooltips() {
-    graphTooltip1.style.display = 'none';
-    graphTooltip2.style.display = 'none';
+    graphTooltip1.classList.remove('animated', 'fadeInUp');
+    graphTooltip2.classList.remove('animated', 'fadeInUp');
+    graphTooltip1.classList.add('animated', 'fadeOutDown');
+    graphTooltip2.classList.add('animated', 'fadeOutDown');
 };
 
 c1.onmouseleave = clearTooltips;
@@ -207,8 +211,19 @@ var regionNames = {
     'pohjanmaa': 'Pohjanmaa'
 };
 
+
+document.getElementById('mapTooltipValue').addEventListener('animationend', function() { 
+    document.getElementById('mapTooltipValue').classList.remove('animated', 'fadeInUp');
+    document.getElementById('mapTooltipArea').classList.remove('animated', 'fadeInUp');
+ });
+
+ function mapAreaTooltipAnimations() {
+    document.getElementById('mapTooltipValue').classList.add('animated', 'fadeInUp');
+    document.getElementById('mapTooltipArea').classList.add('animated', 'fadeInUp');
+ }
 function mapArea(property) {
 
+    mapAreaTooltipAnimations();
     document.getElementById('mapTooltipValue').innerHTML = regionData[property] + ' tartuntaa';
     document.getElementById('mapTooltipArea').innerHTML = regionNames[property];
 
@@ -229,6 +244,7 @@ document.getElementById('mapSvgContainer').onmouseout = function() {
             document.getElementById('smap_' + regionName).style.opacity = '1';
         }
     }
+    mapAreaTooltipAnimations();
     document.getElementById('mapTooltipValue').innerHTML = total + ' tartuntaa';
     document.getElementById('mapTooltipArea').innerHTML = 'Koko suomi';
 };
