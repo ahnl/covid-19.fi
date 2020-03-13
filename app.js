@@ -280,7 +280,7 @@ dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/r
         regionData = data;
 
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/www/suomi.svg', true);
+        xhr.open('GET', 'https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/suomi.svg', true);
         xhr.onload = function () {
             var status = xhr.status;
             if (status === 200) {
