@@ -128,13 +128,13 @@ function dataFromCsv(url, type, callback) {
         if (status === 200) {
             var rows = xhr.response.trim().split('\n');
             if (type) {
-            var data = {
-                labels: [],
-                data: []
-            };
-        } else {
-            var data = {};
-        }
+                var data = {
+                    labels: [],
+                    data: []
+                };
+            } else {
+                var data = {};
+            }
 
             for (var i = 0; i < rows.length; i++) {
                 try {
@@ -151,8 +151,8 @@ function dataFromCsv(url, type, callback) {
 
                     }
 
-                    
-                    
+
+
                 } catch (e) {
                     console.log('dataFromCsv invalid row ' + i)
                 }
@@ -165,6 +165,37 @@ function dataFromCsv(url, type, callback) {
     xhr.send();
 }
 
+var player;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '100',
+        width: '960',
+        videoId: 'OR_7h5DaI-E'
+    });
+}
+
+var eastereggCounter = 0;
+
+function eastereggClick() {
+    eastereggCounter += 1;
+
+
+    if (eastereggCounter == 1) {
+        var tag = document.createElement('script');
+
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    }
+
+    if (eastereggCounter == 10) {
+        document.body.classList.add('rainbowBackground');
+       player.playVideo();
+        player.setVolume(20);
+    }
+}
 
 var tabSelector = document.getElementById('tabSelector');
 var tabA = document.getElementById('tabA');
@@ -189,20 +220,20 @@ function toggleTab() {
         tabSelector.style.left = '50%';
         tabA.classList.remove('selectedTab');
         tabB.classList.add('selectedTab');
-       
-            tabContentA.style.display = 'none';
-            tabContentB.style.display = 'block';
-    
+
+        tabContentA.style.display = 'none';
+        tabContentB.style.display = 'block';
+
 
     } else {
         tabSelector.dataset.selected = 'A';
         tabSelector.style.left = '0';
         tabB.classList.remove('selectedTab');
         tabA.classList.add('selectedTab');
-        
-            tabContentB.style.display = 'none';
-            tabContentA.style.display = 'block';
-            
+
+        tabContentB.style.display = 'none';
+        tabContentA.style.display = 'block';
+
     }
 }
 
@@ -252,15 +283,15 @@ var regionNames = {
 };
 
 
-document.getElementById('mapTooltipValue').addEventListener('animationend', function() { 
+document.getElementById('mapTooltipValue').addEventListener('animationend', function () {
     document.getElementById('mapTooltipValue').classList.remove('animated', 'fadeInUp');
     document.getElementById('mapTooltipArea').classList.remove('animated', 'fadeInUp');
- });
+});
 
- function mapAreaTooltipAnimations() {
+function mapAreaTooltipAnimations() {
     document.getElementById('mapTooltipValue').classList.add('animated', 'fadeInUp');
     document.getElementById('mapTooltipArea').classList.add('animated', 'fadeInUp');
- }
+}
 
 function mapArea(property) {
 
@@ -281,7 +312,7 @@ function mapArea(property) {
     document.getElementById('smap_' + property).style.opacity = '1';
 }
 
-document.getElementById('mapSvgContainer').onmouseout = function() {
+document.getElementById('mapSvgContainer').onmouseout = function () {
     for (var regionName in regionNames) {
         if (regionNames.hasOwnProperty(regionName)) {
             document.getElementById('smap_' + regionName).style.opacity = '1';
@@ -291,7 +322,7 @@ document.getElementById('mapSvgContainer').onmouseout = function() {
         mapAreaTooltipAnimations();
     }
     document.getElementById('mapTooltipValue').innerHTML = total + ' tartuntaa';
-    
+
     document.getElementById('mapTooltipArea').innerHTML = 'Koko suomi';
 };
 
@@ -327,25 +358,25 @@ dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/r
                 document.getElementById('mapSvgContainer').innerHTML = xhr.response;
                 for (var property in regionData) {
                     if (regionData.hasOwnProperty(property)) {
-                        
+
                         var shade = -(2 * regionData[property]);
                         if (shade < -50) {
                             shade = -50;
                         }
-    
+
                         console.log(property + ' ' + shade + ' ' + regionData[property]);
-    
+
                         document.getElementById('smap_' + property).setAttribute("fill", shadeColor('#2D5520', shade)); // smap_
-    
+
                         document.getElementById('smap_' + property).setAttribute('onmousemove', 'mapArea(\'' + property + '\')')
                     }
                 }
-    
-    
+
+
             }
         };
         xhr.send();
-    
+
     }
 });
 
