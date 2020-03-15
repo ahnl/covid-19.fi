@@ -3,9 +3,11 @@ body {
     font-family: 'Finlandica';
     margin: 30px;
 }
+
 .app {
     max-width: 1100px;
-    margin-left: auto; margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
     display: grid;
 
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -14,9 +16,7 @@ body {
 
 }
 
-.part {
-
-}
+.part {}
 
 h1 {
     color: #2D5520;
@@ -45,18 +45,21 @@ h1 {
     transition-timing-function: ease-out;
     transition: transform 0.2s;
 }
+
 .linkButton:hover {
     transform: scale(1.05);
 }
+
 .linkButton:active {
     transform: scale(0.98);
-    
+
 }
 
 .linkButtonText {
     display: table-cell;
     width: calc(100% - 35px);
 }
+
 .linkButtonIcon {
     display: table-cell;
     width: 40px;
@@ -74,12 +77,14 @@ h1 {
 .smallButtonText {
     display: table-cell;
     vertical-align: middle;
-    padding-left: 7px; 
+    padding-left: 7px;
     text-decoration: none;
 
 }
 
-
+.smallButtonLong {
+    width: calc(100% - 20px);
+}
 
 .smallButton {
     margin-top: 15px;
@@ -92,12 +97,14 @@ h1 {
     transition-timing-function: ease-out;
     transition: transform 0.2s;
 }
+
 .smallButton:hover {
     transform: scale(1.05);
 }
+
 .smallButton:active {
     transform: scale(0.98);
-    
+
 }
 
 .resetLink {
@@ -113,10 +120,87 @@ h1 {
     font-size: 22px;
     border-radius: 5px;
     display: table;
-    text-align:center;
+    text-align: center;
+}
+
+.tabCard {
+    margin-top: 15px;
+    border: 2px solid #2D5520;
+    width: calc(100% - 20px);
+    padding: 8px;
+    color: #2D5520;
+    font-size: 22px;
+    border-radius: 5px;
+    transition: max-height 0.2s;
+    height: auto;
+    max-height: 900px;
+    animation-duration: 0.4s;
+}
+
+.tabCardSwitcher {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.tab {
+    text-align: center;
+    font-size: 17px;
+    padding: 9px 0 9px 0;
+    color: #2D5520;
+
+    z-index: 2;
+}
+
+.selectedTab {
+    color: #CAE3C2;
+}
+
+.tabCardSwitcher:hover #tabSelector {
+    transform: scale(1.05);
+}
+
+.tabCardSwitcher:active #tabSelector {
+    transform: scale(0.98);
+}
+
+.tabCardContent {
+    padding: 4px;
+    font-size: 17px;
+}
+
+
+ul {
+    padding-left: 10px;
+    list-style-type: none;
+  }
+  
+  ul li {
+    margin-top: 12px;
+    padding-left: 2rem;
+    background-image: url('images/bullet.svg');
+    background-position: 0 2px;
+    background-size: 14px 14px;
+    background-repeat: no-repeat;
+  }
+
+#tabSelector {
+    width: 50%;
+    position: absolute;
+    background-color: #2D5520;
+    height: 35px;
+    border-radius: 5px;
+    top: 1px;
+    transition-timing-function: ease-out;
+    transition: transform 0.2s;
 }
 
 .graphCard {
+    user-select: none;
     position: relative;
     margin-top: 15px;
     border: 2px solid #2D5520;
@@ -125,9 +209,9 @@ h1 {
     color: #2D5520;
     font-size: 22px;
     border-radius: 5px;
-    text-align:center;
-   padding-bottom: 35px;
-   background-color: #2D5520;
+    text-align: center;
+    padding-bottom: 35px;
+    background-color: #2D5520;
 }
 
 .statisticCardValue {
@@ -145,7 +229,7 @@ hr {
     display: block;
 }
 
-.graphCardTitle { 
+.graphCardTitle {
     position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -155,23 +239,25 @@ hr {
     font-size: 22px;
     margin-top: 27px;
 }
-.graphCardTooltip {
-   
-    position: absolute;
-left: 0;
-right: 0;
-margin: auto;
-width: 110px;
 
-text-align: center;
-background-color: rgba(255,255,255);
-color: #2D5520;
-font-size: 14px;
-padding: 5px 30px 5px 30px;
-border-radius: 3px;
-margin-top: -23px;
-animation-duration: 0.8s;
+.graphCardTooltip {
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 110px;
+
+    text-align: center;
+    background-color: rgba(255, 255, 255);
+    color: #2D5520;
+    font-size: 14px;
+    padding: 5px 30px 5px 30px;
+    border-radius: 3px;
+    margin-top: -23px;
+    animation-duration: 0.8s;
 }
+
 .graphCard canvas {
     background-color: #CAE3C2;
 }
@@ -189,12 +275,14 @@ p {
 }
 
 #mapSvgContainer {
+    user-select: none;
     text-align: center;
     margin-bottom: 30px;
     width: 100%;
     -webkit-tap-highlight-color: transparent;
-   
+
 }
+
 #mapSvgContainer path {
     transition: opacity 0.2s;
 }
@@ -205,11 +293,13 @@ p {
     display: block;
     animation-duration: 0.6s;
 }
+
 #mapTooltipValue {
     font-size: 17px;
     display: block;
     animation-duration: 0.6s;
 }
+
 .map {
     margin-top: 35px;
 }

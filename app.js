@@ -166,6 +166,46 @@ function dataFromCsv(url, type, callback) {
 }
 
 
+var tabSelector = document.getElementById('tabSelector');
+var tabA = document.getElementById('tabA');
+var tabB = document.getElementById('tabB');
+var tabContentA = document.getElementById('tabContentA');
+var tabContentB = document.getElementById('tabContentB');
+
+tabContentA.addEventListener('animationend', removeTabAnimations);
+tabContentB.addEventListener('animationend', removeTabAnimations);
+
+function removeTabAnimations() {
+    tabContentA.classList.remove('animated', 'bounce');
+    tabContentB.classList.remove('animated', 'bounce');
+}
+
+function toggleTab() {
+
+    tabContentA.classList.add('animated', 'bounce');
+    tabContentB.classList.add('animated', 'bounce');
+    if (tabSelector.dataset.selected == 'A') {
+        tabSelector.dataset.selected = 'B';
+        tabSelector.style.left = '50%';
+        tabA.classList.remove('selectedTab');
+        tabB.classList.add('selectedTab');
+       
+            tabContentA.style.display = 'none';
+            tabContentB.style.display = 'block';
+    
+
+    } else {
+        tabSelector.dataset.selected = 'A';
+        tabSelector.style.left = '0';
+        tabB.classList.remove('selectedTab');
+        tabA.classList.add('selectedTab');
+        
+            tabContentB.style.display = 'none';
+            tabContentA.style.display = 'block';
+            
+    }
+}
+
 // https://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors
 function shadeColor(color, percent) {
 
