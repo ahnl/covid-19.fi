@@ -165,15 +165,6 @@ function dataFromCsv(url, type, callback) {
     xhr.send();
 }
 
-var player;
-
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-        height: '100',
-        width: '960',
-        videoId: 'OR_7h5DaI-E'
-    });
-}
 
 var eastereggCounter = 0;
 
@@ -181,19 +172,10 @@ function eastereggClick() {
     eastereggCounter += 1;
 
 
-    if (eastereggCounter == 1) {
-        var tag = document.createElement('script');
-
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    }
 
     if (eastereggCounter == 10) {
         document.body.classList.add('rainbowBackground');
-       player.playVideo();
-        player.setVolume(20);
+        document.getElementById("eastereggSound").play();
     }
 }
 
