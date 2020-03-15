@@ -82,8 +82,72 @@
                 <div class="graphCardTooltip" id="graphTooltip2" style="display:none;"></div>
 
             </div>
+
+            <div class="tabCard">
+                <div class="tabCardSwitcher" onclick="toggleTab()">
+                    <div id="tabSelector" data-selected="A"></div>
+                    <div class="tab selectedTab" id="tabA">
+                        Oireet
+                    </div>
+                    <div class="tab" id="tabB">
+                        Suojautuminen
+                    </div>
+                </div>
+                <div class="tabCardContent">
+                    <div id="tabContentA">
+                        <ul>
+                            <li>Kuume</li>
+                            <li>Yskä</li>
+                            <li>Hengenahdistus</li>
+                            <li>Lihassärky</li>
+                            <li>Väsymys</li>
+                            <li>Kurkkukipu</li>
+                        </ul>
+                        <i class="light">Lähde: THL</i>
+                    </div>
+                    <div id="tabContentB" style="display: none;">
+                        <ul>
+                            <li>Pese kädet saippualla</li>
+                            <li>Vältä suuria väkijoukkoja</li>
+                            <li>Älä koskettele silmiäsi, suutasi, tai
+                                kasvojasi, ellet ole juuri pessyt käsiäsi</li>
+                            <li>Vältä kättelyä</li>
+                            <li>Yski ja aivasta kertakäyttöliinaan tai hihaasi</li>
+                            <li>Vältä kättelyä</li>
+
+                        </ul>
+                       
+
+                        <a href="https://www.youtube.com/watch?v=isLPN0UdeDM" target="_blank" class="resetLink">
+
+                            <div class="smallButton smallButtonLong">
+                                <img src="images/play.svg" class="smallButtonIcon">
+                                <span class="smallButtonText">
+                                    Näin peset kätesi
+                                </span>
+                            </div>
+
+                        </a>
+
+                        <a href="https://www.youtube.com/watch?v=De5Fz2lkv30" target="_blank" class="resetLink">
+
+                            <div class="smallButton smallButtonLong">
+                                <img src="images/play.svg" class="smallButtonIcon">
+                                <span class="smallButtonText">
+                                    Näin yskit oikein
+                                </span>
+                            </div>
+
+                        </a>
+                        <br>
+                        <i class="light">Lähde: THL</i>
+                    </div>
+                </div>
+            </div>
         </div>
+
         <div class="part">
+
             <div class="map">
 
                 <div id="mapSvgContainer">
@@ -148,8 +212,7 @@
 
             </p>
 
-            <a href="sh/tw"
-                target="_blank" class="resetLink">
+            <a href="sh/tw" target="_blank" class="resetLink">
 
                 <div class="smallButton">
                     <img src="images/tws.svg" class="smallButtonIcon">
@@ -159,8 +222,7 @@
                 </div>
 
             </a>
-            <a href="sh/fb"
-                target="_blank" class="resetLink">
+            <a href="sh/fb" target="_blank" class="resetLink">
 
                 <div class="smallButton">
                     <img src="images/fbs.svg" class="smallButtonIcon">
@@ -176,16 +238,19 @@
     <script src="app.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160645425-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160645425-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-160645425-1');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-    
+        gtag('config', 'UA-160645425-1');
+    </script>
+
+
 </body>
 
 </html>
