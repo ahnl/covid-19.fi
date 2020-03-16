@@ -45,6 +45,19 @@ h1 {
     transition-timing-function: ease-out;
     transition: transform 0.2s;
 }
+.infoContent {
+    width: calc(100% - 50px - 4px);
+    color: #2D5520;
+    background-color: #CAE3C2;
+    border: 2px solid #2D5520;
+}
+.infoContent:hover {
+    transform: scale(1) !important;
+}
+.infoContent:active {
+    transform: scale(1) !important;
+}
+
 
 .linkButton:hover {
     transform: scale(1.05);
@@ -349,4 +362,8 @@ p {
     91%{
         background-color: rgb(255,0,127);
     }
+}
+.snapButton {
+    background: #fffc00 ;
+    color: #2D5520;
 }
