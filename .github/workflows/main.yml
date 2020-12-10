@@ -26,7 +26,7 @@ jobs:
        id: regionalcsv  # Remember to give an ID if you need the output
        name: Download the file
        with:
-         url: "https://sampo.thl.fi/pivot/prod/fi/epirapo/covid19case/fact_epirapo_covid19case.csv?column=hcdmunicipality2020-445222"
+         url: "https://f.mixu.wtf/Mozzarella%20steroideilla.png"
          target: data/regional/
      - name: Commit files
        run: |
