@@ -103,10 +103,9 @@ c1.onmouseleave = clearTooltips;
 c1.ontouchleave = clearTooltips;
 c2.onmouseleave = clearTooltips;
 c2.ontouchleave = clearTooltips;
-
 function getLastUpdated() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://api.github.com/repos/ahnl/coronavirus-finland/commits?path=total.csv&page=1&per_page=1', true);
+    xhr.open('GET', 'https://api.github.com/repos/ahnl/coronavirus-finland/commits?path=data/regional.csv&page=1&per_page=1', true);
     xhr.responseType = 'json';
     xhr.onload = function () {
         var status = xhr.status;
