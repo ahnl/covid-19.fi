@@ -371,7 +371,7 @@ function formatRegionData(data) {
 function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
-dataFromCsv('newregional2.csv', false, function (err, data) {
+dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/data/regional.csv', false, function (err, data) {
     if (!err) {
         //data
         data = formatRegionData(data);
@@ -453,7 +453,7 @@ function reindexData(data) {
 }
 var total = null;
 
-dataFromCsv('newday.csv', true, function (err, data) {
+dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/data/daily.csv', true, function (err, data) {
     if (!err) {
         delete data.labels[0];
         delete data.data[0];
