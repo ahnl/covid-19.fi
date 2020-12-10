@@ -24,3 +24,7 @@ jobs:
        with:
          url: "https://sampo.thl.fi/pivot/prod/fi/epirapo/covid19case/fact_epirapo_covid19case.csv?column=hcdmunicipality2020-445222"
          target: data/regional/
+     - uses: actions/upload-artifact@v2
+       with:
+        name: regionalcsv
+        path: data/regional/fact_epirapo_covid19case.csv
