@@ -23,4 +23,4 @@ jobs:
        name: Download the file
        with:
          url: "https://sampo.thl.fi/pivot/prod/fi/epirapo/covid19case/fact_epirapo_covid19case.csv?column=hcdmunicipality2020-445222"
-         target: /
+         target: /data/regional/
