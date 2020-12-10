@@ -27,4 +27,4 @@ jobs:
      - uses: actions/upload-artifact@v2
        with:
         name: regionalcsv
-        path: data/regional/fact_epirapo_covid19case.csv
+        path: ${{ steps.regionalcsv.output.filename }}
