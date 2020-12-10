@@ -24,7 +24,7 @@ jobs:
        with:
          url: "https://sampo.thl.fi/pivot/prod/fi/epirapo/covid19case/fact_epirapo_covid19case.csv?column=hcdmunicipality2020-445222"
          target: data/regional/
-     - uses: actions/upload-artifact@v2
-       with:
-        name: regionalcsv
-        path: ${{ steps.regionalcsv.output.filename }}
+     - uses: mikeal/publish-to-github-action@master
+       env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          BRANCH_NAME: 'master' #optional defaults to master
