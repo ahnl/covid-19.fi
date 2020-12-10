@@ -1,0 +1,24 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Update THLs data
+
+
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 13 * * *'
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+     - uses: suisei-cn/actions-download-file@v1
+       id: regionalcsv  # Remember to give an ID if you need the output
+       name: Download the file
+       with:
+         url: "https://sampo.thl.fi/pivot/prod/fi/epirapo/covid19case/fact_epirapo_covid19case.csv?column=hcdmunicipality2020-445222"
+         target: /regional.csv
