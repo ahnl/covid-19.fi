@@ -13,7 +13,7 @@ var cvfGraphOptions = {
         enabled: false,
         intersect: false,
         custom: function (model) {
-            document.getElementById(this._chart.canvas.dataset.chartTooltip).innerHTML = model.title + '<br>' + model.dataPoints[0].yLabel + ' tartuntaa';
+            document.getElementById(this._chart.canvas.dataset.chartTooltip).innerHTML = model.title + '<br>' + numberWithSpaces(model.dataPoints[0].yLabel) + ' tartuntaa';
         }
     },
     hover: {
@@ -138,8 +138,11 @@ function dataFromCsv(url, type, callback) {
 
             for (var i = 0; i < rows.length; i++) {
                 try {
-                    var row = rows[i].split(',');
-
+                    if (rows[i].includes(',')) {
+                        var row = rows[i].split(',');
+                    } else {
+                        var row = rows[i].split(';');
+                    }
                     if (type) {
                         var date = new Date(row[0]);
                         var cleanDate = date.getDate() + '.' + (date.getMonth() + 1) + '.';
@@ -280,7 +283,7 @@ function mapArea(property) {
     if (document.getElementById('mapTooltipArea').innerHTML != regionNames[property]) {
         mapAreaTooltipAnimations();
     }
-    document.getElementById('mapTooltipValue').innerHTML = regionData[property] + ' tartuntaa';
+    document.getElementById('mapTooltipValue').innerHTML = numberWithSpaces(regionData[property]) + ' tartuntaa';
     document.getElementById('mapTooltipArea').innerHTML = regionNames[property];
 
     for (var regionName in regionNames) {
@@ -303,7 +306,7 @@ document.getElementById('mapSvgContainer').onmouseout = function () {
     if (document.getElementById('mapTooltipArea').innerHTML != 'Koko suomi') {
         mapAreaTooltipAnimations();
     }
-    document.getElementById('mapTooltipValue').innerHTML = total + ' tartuntaa';
+    document.getElementById('mapTooltipValue').innerHTML = numberWithSpaces(total) + ' tartuntaa';
 
     document.getElementById('mapTooltipArea').innerHTML = 'Koko suomi';
 };
@@ -327,9 +330,51 @@ function makeChart(canvasContext, label, data) {
 
 var regionData = {};
 
-dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/regional.csv', false, function (err, data) {
+function formatRegionData(data) {
+    const conversions = {
+        'ahvenanmaa': ['Ahvenanmaa'],
+        'varsinais-suomi': ['Varsinais-Suomen SHP'],
+        'uusimaa': ['Helsingin ja Uudenmaan SHP'],
+        'etela-karjala': ['Etelä-Karjalan SHP'],
+        'kanta-hame': ['Kanta-Hämeen SHP'],
+        'satakunta': ['Satakunnan SHP'],
+        'etela-pohjanmaa': ['Etelä-Pohjanmaan SHP'],
+        'keski-suomi': ['Keski-Suomen SHP'],
+        'pohjois-savo': ['Pohjois-Savon SHP'], 
+        'pohjois-karjala': ['Pohjois-Karjalan SHP'],
+        'pirkanmaa': ['Pirkanmaan SHP'],
+        'lappi': ['Lapin SHP', 'Länsi-Pohjan SHP'],
+        'pohjois-pohjanmaa': ['Pohjois-Pohjanmaan SHP'],
+        'keski-pohjanmaa': ['Keski-Pohjanmaan SHP'],
+        'pohjanmaa': ['Vaasan SHP'],
+        'etela-savo': ['Etelä-Savon SHP', 'Itä-Savon SHP'],
+        'paijat-hame': ['Päijät-Hämeen SHP'],
+        'kymenlaakso': ['Kymenlaakson SHP'],
+        'kainuu': ['Kainuun SHP']
+    }    
+
+    let newData = {};
+    for (let shp in data) {
+        let maakunta = Object.keys(conversions).find(p => conversions[p].includes(shp));
+        if (maakunta) {
+            if (newData[maakunta] == undefined) {
+                newData[maakunta] = 0;
+            }
+            newData[maakunta] += parseInt(data[shp]);
+        } else {
+            console.log('Unknown shp: ' + shp);
+        }
+    }
+    console.log(newData);
+    return newData;
+}
+function numberWithSpaces(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+dataFromCsv('newregional2.csv', false, function (err, data) {
     if (!err) {
         //data
+        data = formatRegionData(data);
         regionData = data;
 
         var xhr = new XMLHttpRequest();
@@ -341,7 +386,7 @@ dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/r
                 for (var property in regionData) {
                     if (regionData.hasOwnProperty(property)) {
 
-                        var shade = -(2 * regionData[property]);
+                        var shade = -(0.04 * regionData[property]);
                         if (shade < -50) {
                             shade = -50;
                         }
@@ -362,14 +407,71 @@ dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/r
     }
 });
 
-dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/day.csv', true, function (err, data) {
+function makeCumulative(data) {
+    // data = {data: , labels: }
+    let cumData = {data: [], labels: []};
+    let current = 0;
+    data.labels.forEach((point, index) => {
+        let value = parseInt(data.data[index]);
+        current += (value ? value : 0);
+        //console.log(point, current);
+        cumData.labels.push(point);
+        cumData.data.push(current);
+    });
+
+    return cumData;
+}
+function trimData(data) {
+    function trimmer(i) {
+        let value = parseInt(data.data[i]);
+        value = (value ? value : 0);
+        if (value > 0) {
+            return true;
+        } else {
+            delete data.labels[i];
+            delete data.data[i];
+            return false;
+        }
+    }   
+    for (let i = 0; i < data.labels.length; i++) {
+        if (trimmer(i)) break
+    }
+    for (let i = data.labels.length; i--;) {
+        if (trimmer(i)) break
+    }
+    return data;
+}
+function reindexData(data) {
+    let newData = {data: [], labels: []};
+    data.labels.forEach((point, index) => {
+        let value = parseInt(data.data[index]);
+        value = (value ? value : 0);
+        newData.labels.push(point);
+        newData.data.push(value);
+    });
+    return newData;
+}
+var total = null;
+
+dataFromCsv('newday.csv', true, function (err, data) {
     if (!err) {
+        delete data.labels[0];
+        delete data.data[0];
+        data = trimData(data);
+        data = reindexData(data);
+        console.log(data);
         makeChart(ctx, 'Tapaukset', data);
+        let cumData = makeCumulative(data);
+
+        total = cumData.data[cumData.data.length - 1];
+
+        document.getElementById('total').innerHTML = numberWithSpaces(total);
+        document.getElementById('mapTooltipValue').innerHTML = numberWithSpaces(total) + ' tartuntaa';
+        makeChart(ctx2, 'Tartunnat yhteensä', cumData);
     }
 });
 
-var total = null;
-
+/*
 dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/total.csv', true, function (err, data) {
     if (!err) {
         total = data.data[data.data.length - 1];
@@ -378,4 +480,4 @@ dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/t
         document.getElementById('mapTooltipValue').innerHTML = total + ' tartuntaa';
         makeChart(ctx2, 'Tartunnat yhteensä', data);
     }
-});
+});*/

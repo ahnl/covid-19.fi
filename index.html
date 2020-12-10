@@ -18,9 +18,6 @@
     <meta name="theme-color" content="#ffffff">
 
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <script>
-alert('Sivustoa ei päivitetä enää. Tilastot päivitetty viimeeksi 2 kuukautta sitten.');
-    </script>
 </head>
 
 <body>
@@ -91,6 +88,65 @@ alert('Sivustoa ei päivitetä enää. Tilastot päivitetty viimeeksi 2 kuukautt
             </div>
 
         
+            
+        </div>
+
+        <div class="part">
+
+            <div class="map">
+
+                <div id="mapSvgContainer">
+
+                </div>
+
+                <div id="mapTooltip" class="statisticCard">
+                    <span id="mapTooltipArea">Koko suomi</span>
+                    <span id="mapTooltipValue">0 tartuntaa</span>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="part">
+            <!--
+            <div class="linkButton infoContent">
+                <div class="linkButtonText">
+                    THL:n mukaan näytteenottokriteerit ovat muuttuneet. Oireettomia ei enää testata. Tämä saattaa vaikuttaa tilastotietoon puutteellisesti.<br>
+                    <i class="light">Tiedote 14.03.2020</i>
+                </div>
+                <div class="linkButtonIcon">
+                    <img src="images/attention.svg">
+                </div>
+            </div>
+        -->
+
+            <a class="resetLink" target="_blank"
+                href="https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19">
+                <div class="linkButton">
+                    <div class="linkButtonText">
+                        Ajankohtaista koronaviruksesta
+                        <br>
+                        <i class="light">Terveyden ja hyvinvoinnin laitos</i>
+                    </div>
+                    <div class="linkButtonIcon">
+                        <img src="images/open.svg">
+                    </div>
+                </div>
+            </a>
+
+            <a class="resetLink" target="_blank"
+                href="https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">
+                <div class="linkButton">
+                    <div class="linkButtonText">
+                        Maailmanlaajuiset tilastot
+                        <br>
+                        <i class="light">Johns Hopkins - CSSE</i>
+                    </div>
+                    <div class="linkButtonIcon">
+                        <img src="images/open.svg">
+                    </div>
+                </div>
+            </a>
             <div class="tabCard">
                 <div class="tabCardSwitcher" onclick="toggleTab()">
                     <div id="tabSelector" data-selected="A"></div>
@@ -151,64 +207,6 @@ alert('Sivustoa ei päivitetä enää. Tilastot päivitetty viimeeksi 2 kuukautt
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="part">
-
-            <div class="map">
-
-                <div id="mapSvgContainer">
-
-                </div>
-
-                <div id="mapTooltip" class="statisticCard">
-                    <span id="mapTooltipArea">Koko suomi</span>
-                    <span id="mapTooltipValue">0 tartuntaa</span>
-                </div>
-
-            </div>
-
-        </div>
-        <div class="part">
-            <div class="linkButton infoContent">
-                <div class="linkButtonText">
-                    THL:n mukaan näytteenottokriteerit ovat muuttuneet. Oireettomia ei enää testata. Tämä saattaa vaikuttaa tilastotietoon puutteellisesti.<br>
-                    <i class="light">Tiedote 14.03.2020</i>
-                </div>
-                <div class="linkButtonIcon">
-                    <img src="images/attention.svg">
-                </div>
-            </div>
-
-
-            <a class="resetLink" target="_blank"
-                href="https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19">
-                <div class="linkButton">
-                    <div class="linkButtonText">
-                        Ajankohtaista koronaviruksesta
-                        <br>
-                        <i class="light">Terveyden ja hyvinvoinnin laitos</i>
-                    </div>
-                    <div class="linkButtonIcon">
-                        <img src="images/open.svg">
-                    </div>
-                </div>
-            </a>
-
-            <a class="resetLink" target="_blank"
-                href="https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">
-                <div class="linkButton">
-                    <div class="linkButtonText">
-                        Maailmanlaajuiset tilastot
-                        <br>
-                        <i class="light">Johns Hopkins - CSSE</i>
-                    </div>
-                    <div class="linkButtonIcon">
-                        <img src="images/open.svg">
-                    </div>
-                </div>
-            </a>
-
 
             <hr>
 
@@ -219,8 +217,8 @@ alert('Sivustoa ei päivitetä enää. Tilastot päivitetty viimeeksi 2 kuukautt
                 <a target="_blank"
                     href="https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19">Terveyden
                     ja hyvinvoinnin laitos</a><br>
-                <a target="_blank" href="https://dynamic.hs.fi/2020/corona-embed-finland/?verticalscroll=false&horizontalscroll=false">Helsingin
-                    Sanomat</a>
+                <!--<a target="_blank" href="https://dynamic.hs.fi/2020/corona-embed-finland/?verticalscroll=false&horizontalscroll=false">Helsingin
+                    Sanomat</a>-->
             </p>
 
             <p>
