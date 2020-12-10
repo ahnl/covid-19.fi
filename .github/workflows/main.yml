@@ -30,7 +30,16 @@ jobs:
          target: .
      - name: Rename regional.csv
        run: |
-         mv fact_epirapo_covid19case.csv regional.csv
+         mv fact_epirapo_covid19case.csv data/regional.csv
+     - uses: suisei-cn/actions-download-file@v1
+       id: dailycsv  # Remember to give an ID if you need the output
+       name: Download daily data
+       with:
+         url: "https://sampo.thl.fi/pivot/prod/fi/epirapo/covid19case/fact_epirapo_covid19case.csv?column=dateweek2020010120201231-443702L"
+         target: .
+     - name: Rename daily.csv
+       run: |
+         mv fact_epirapo_covid19case.csv data/daily.csv
      - name: Commit files
        run: |
           git add .
