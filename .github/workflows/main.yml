@@ -24,10 +24,13 @@ jobs:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
      - uses: suisei-cn/actions-download-file@v1
        id: regionalcsv  # Remember to give an ID if you need the output
-       name: Download the file
+       name: Download regional data
        with:
-         url: "https://f.mixu.wtf/Mozzarella%20steroideilla.png"
-         target: data/regional/
+         url: "https://sampo.thl.fi/pivot/prod/fi/epirapo/covid19case/fact_epirapo_covid19case.csv?column=hcdmunicipality2020-445222"
+         target: .
+     - name: Rename regional.csv
+       run: |
+         mv fact_epirapo_covid19case.csv regional.csv
      - name: Commit files
        run: |
           git add .
