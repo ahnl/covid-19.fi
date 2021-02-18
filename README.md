@@ -1,4 +1,4 @@
-# Coronavirus in Finland - Web App
+# Covid-19 in Finland - Web App
 
 **Project is now released and is accessible on [covid-19.fi](https://covid-19.fi)**
 
