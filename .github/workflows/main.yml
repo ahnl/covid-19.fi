@@ -4,6 +4,9 @@ name: Update THLs data
 
 
 on:
+  push:
+     branches:
+        - main
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron:  '0 13 * * *'
@@ -33,7 +36,7 @@ jobs:
        id: dailycsv  # Remember to give an ID if you need the output
        name: Download daily data
        with:
-         url: "https://sampo.thl.fi/pivot/prod/fi/epirapo/covid19case/fact_epirapo_covid19case.csv?column=dateweek2020010120201231-443702L"
+         url: "https://sampo.thl.fi/pivot/prod/fi/epirapo/covid19case/fact_epirapo_covid19case.csv?row=508804L&column=measure-444833&fo=1"
          target: .
      - name: Rename daily.csv
        run: |
