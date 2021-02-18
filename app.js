@@ -117,7 +117,7 @@ function getLastUpdated() {
 }
 getLastUpdated();
 
-function dataFromCsv(url, type, callback) {
+function dataFromCsv(url, type, columnShift, callback) {
     // type = false : chart dataset and clean dates
     // type = true  : object
     var xhr = new XMLHttpRequest();
@@ -143,13 +143,13 @@ function dataFromCsv(url, type, callback) {
                         var row = rows[i].split(';');
                     }
                     if (type) {
-                        var date = new Date(row[0]);
+                        var date = new Date(row[0 + columnShift]);
                         var cleanDate = date.getDate() + '.' + (date.getMonth() + 1) + '.';
                         data.labels.push(cleanDate);
-                        data.data.push(row[1]);
+                        data.data.push(row[1 + columnShift]);
 
                     } else {
-                        data[row[0]] = row[1];
+                        data[row[0 + columnShift]] = row[1 + columnShift];
 
                     }
 
@@ -370,7 +370,7 @@ function formatRegionData(data) {
 function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
-dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/data/regional.csv', false, function (err, data) {
+dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/data/regional.csv', false, 0, function (err, data) {
     if (!err) {
         //data
         data = formatRegionData(data);
@@ -452,7 +452,7 @@ function reindexData(data) {
 }
 var total = null;
 
-dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/data/daily.csv', true, function (err, data) {
+dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/data/daily.csv', true, 1, function (err, data) {
     if (!err) {
         delete data.labels[0];
         delete data.data[0];
