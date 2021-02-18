@@ -1,6 +1,6 @@
 # Coronavirus in Finland - Web App
 
-**Project is now released and is accessible on [koronatieto.fi](https://koronatieto.fi)**
+**Project is now released and is accessible on [covid-19.fi](https://covid-19.fi)**
 
 - [x] Mobile layout 
 - [x] Links to THL pages 
