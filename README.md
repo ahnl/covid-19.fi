@@ -1,5 +1,5 @@
 # Covid-19 in Finland - Web App
-
+[![Update THLs data](https://github.com/ahnl/covid-19.fi/actions/workflows/main.yml/badge.svg)](https://github.com/ahnl/covid-19.fi/actions/workflows/main.yml)  
 **Project is now released and is accessible on [covid-19.fi](https://covid-19.fi)**
 
 - [x] Mobile layout 
