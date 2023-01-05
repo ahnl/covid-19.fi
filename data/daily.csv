@@ -1,60 +1,93 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="cache" content="no store" />
+	<meta http-equiv="expires" content="-1" />
+	<title>Huoltokatko verkkopalvelussa - THL</title>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<link rel="Shortcut Icon" href="favicon.ico" />
+	<link type="text/css" rel="stylesheet" href="css/thl.css" />
 
-
-
-
+</head>
 <html>
-    <head>
-        <title>Virhetilanne - THL kuutio- ja tiivistekäyttöliittymä</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+	<div id="header-wrapper">
+		<div class="thl-logo-header-container">
+			<div id="header">
+				<img src="images/thl-logo-2022-fi.png" class="thl-logo">
+			</div>
+		</div>
+	</div>
+	<div id="divider">
+	
+	</div>
+	<div id="wrapper">
+		<div id="maintainance">
+		<h1>Palvelussamme on huoltokatko</h1>
+			<div class="maintananceContent">
+				<p>Valitettavasti THL:n verkkopalvelu ei juuri nyt ole käytössä siinä tehtävien huoltotöiden takia. Yritä hetken kuluttua uudelleen.</p>
+				<p>THL:s webbplats är för tillfället inte tillgänglig på grund av underhåll. Vänligen försök igen om en stund.</p>
+				<p>The THL website is currently unavailable due to site maintenance. Please try again later.</p>
+	    		</div>
+		</div>
+	</div>
+	<div id="footer-wrapper">
+		<div id="footer-info-wrapper">
+			<div id="footer-info-content">
+				<div class="footer-some-container">
+					<div class="thl-logo-some-container">
+						<img src="images/thl-logo-2022-fi.png" class="thl-logo">
+					</div>	
+					<div class="some-container">
+						<div id="some-links">
+							<div class=some-linkgroup>
+								<div class="some-linklist">
+									<div class="some-linklist-item">
+										<a href="https://www.facebook.com/thl.fi" target="_blank">
+										<img src="images/facebook.png" alt="Facebook">								
+										</a>
+									</div>
+									<div class="some-linklist-item">
+										<a href="https://www.slideshare.net/THLfi" target="_blank">
+										<img src="images/slideshare.png" alt="Facebook">								
+										</a>
+									</div>
+									<div class="some-linklist-item">
+										<a href="https://www.youtube.com/user/THLfinland" target="_blank">
+										<img src="images/some-youtube.png" alt="Facebook">								
+										</a>
+									</div>
+									<div class="some-linklist-item">
+										<a href="https://twitter.com/THLorg" target="_blank">
+										<img src="images/some-twitter.png" alt="Facebook">								
+										</a>
+									</div>
+									<div class="some-linklist-item">
+										<a href="https://blogi.thl.fi" target="_blank">
+										<img src="images/some-blogi.png" alt="Facebook">								
+										</a>
+									</div>
 
-
-        <link rel="stylesheet" href="https://repo.thl.fi/sites/pivot/pivot-production/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="https://repo.thl.fi/sites/pivot/pivot-production/webjars/source-sans-pro/2.0.10/source-sans-pro.css" />
-        <link rel="stylesheet" href="/pivot/css/style.css" />
-        <link rel="stylesheet" href="/pivot/css/summary.css" />
-        <!--[if lt IE 9]>
-          <script src="https://repo.thl.fi/sites/pivot/pivot-production/js/html5shiv.js"></script>
-          <script src="https://repo.thl.fi/sites/pivot/pivot-production/js/respond.min.js"></script>
-        <![endif]-->
-
-
-    </head>
-    <body class="common">
-
-    <header class="summary-header container">
-        <h1>Virhetilanne</h1>
-        <div class="logo">
-            <img src="https://repo.thl.fi/sites/pivot/pivot-production/images/THL_tunnus_pitka_fi_RGB.svg">
-        </div>
-    </header>
-
-    <div class="stripe">
-    </div>
-    <div class="summary-body container">
-   	 	<div class="summary-content">
-	      <h2>Pyyntöä käsitellessä tapahtui virhe</h2>
-	     	<p>Pyyntöä käsitellessä tapahtui odottamaton virhetilanne. Virhetilanne on kirjattu palvelun lokiin. Huomioithan, että palvelu on yhä kehitysvaiheessa.</p>
-      </div>
-    </div>
-
-  <footer class="default">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-12">
-          <a title="Terveyden ja hyvinvoinnin laitos" href="http://thl.fi/">
-   	        <img class="footer-logo" src="https://repo.thl.fi/sites/pivot/pivot-production/images/THL.svg"/>
-   	      </a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-    <script src="https://repo.thl.fi/sites/pivot/pivot-production/js/jquery.js"></script>
-    <script src="https://repo.thl.fi/sites/pivot/pivot-production/js/jquery-ui.js"></script>
-    <script src="https://repo.thl.fi/sites/pivot/pivot-production/js/jquery.ui.touch-punch.min.js"></script>
-    <script src="https://repo.thl.fi/sites/pivot/pivot-production/js/bootstrap.bundle.min.js"></script>
-
-    <script src="/pivot/js/google-analytics.min.js"></script>
-    </body>
+								</div>						
+							</div>
+						</div>
+					</div>
+				</div>			
+			</div>	
+			
+		</div>	
+	</div>
+	<div id="footer">
+	<div id="footer-contact-info" role="contentinfo" aria-label="Alaviite">
+        	<div id="footer-content">
+			<ul>
+				<li>&copy; THL 2022 &mdash; Terveyden ja hyvinvoinnin laitos, PL 30, 00271 Helsinki</li>
+				<li><span class="footer-bullet"></span>puhelin 029 524 6000</li>    
+		    </ul>
+		</div>
+	</div>
+</body>
 </html>
