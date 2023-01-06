@@ -1,93 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="cache-control" content="no-cache" />
-	<meta http-equiv="pragma" content="no-cache" />
-	<meta http-equiv="cache" content="no store" />
-	<meta http-equiv="expires" content="-1" />
-	<title>Huoltokatko verkkopalvelussa - THL</title>
-	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
-	<link rel="Shortcut Icon" href="favicon.ico" />
-	<link type="text/css" rel="stylesheet" href="css/thl.css" />
-
-</head>
-<html>
-<body>
-	<div id="header-wrapper">
-		<div class="thl-logo-header-container">
-			<div id="header">
-				<img src="images/thl-logo-2022-fi.png" class="thl-logo">
-			</div>
-		</div>
-	</div>
-	<div id="divider">
-	
-	</div>
-	<div id="wrapper">
-		<div id="maintainance">
-		<h1>Palvelussamme on huoltokatko</h1>
-			<div class="maintananceContent">
-				<p>Valitettavasti THL:n verkkopalvelu ei juuri nyt ole käytössä siinä tehtävien huoltotöiden takia. Yritä hetken kuluttua uudelleen.</p>
-				<p>THL:s webbplats är för tillfället inte tillgänglig på grund av underhåll. Vänligen försök igen om en stund.</p>
-				<p>The THL website is currently unavailable due to site maintenance. Please try again later.</p>
-	    		</div>
-		</div>
-	</div>
-	<div id="footer-wrapper">
-		<div id="footer-info-wrapper">
-			<div id="footer-info-content">
-				<div class="footer-some-container">
-					<div class="thl-logo-some-container">
-						<img src="images/thl-logo-2022-fi.png" class="thl-logo">
-					</div>	
-					<div class="some-container">
-						<div id="some-links">
-							<div class=some-linkgroup>
-								<div class="some-linklist">
-									<div class="some-linklist-item">
-										<a href="https://www.facebook.com/thl.fi" target="_blank">
-										<img src="images/facebook.png" alt="Facebook">								
-										</a>
-									</div>
-									<div class="some-linklist-item">
-										<a href="https://www.slideshare.net/THLfi" target="_blank">
-										<img src="images/slideshare.png" alt="Facebook">								
-										</a>
-									</div>
-									<div class="some-linklist-item">
-										<a href="https://www.youtube.com/user/THLfinland" target="_blank">
-										<img src="images/some-youtube.png" alt="Facebook">								
-										</a>
-									</div>
-									<div class="some-linklist-item">
-										<a href="https://twitter.com/THLorg" target="_blank">
-										<img src="images/some-twitter.png" alt="Facebook">								
-										</a>
-									</div>
-									<div class="some-linklist-item">
-										<a href="https://blogi.thl.fi" target="_blank">
-										<img src="images/some-blogi.png" alt="Facebook">								
-										</a>
-									</div>
-
-								</div>						
-							</div>
-						</div>
-					</div>
-				</div>			
-			</div>	
-			
-		</div>	
-	</div>
-	<div id="footer">
-	<div id="footer-contact-info" role="contentinfo" aria-label="Alaviite">
-        	<div id="footer-content">
-			<ul>
-				<li>&copy; THL 2022 &mdash; Terveyden ja hyvinvoinnin laitos, PL 30, 00271 Helsinki</li>
-				<li><span class="footer-bullet"></span>puhelin 029 524 6000</li>    
-		    </ul>
-		</div>
-	</div>
-</body>
-</html>
+Alue;val
+Ahvenanmaa;10820
+Varsinais-Suomen SHP;110713
+Satakunnan SHP;49550
+Kanta-Hämeen SHP;34135
+Pirkanmaan SHP;116679
+Päijät-Hämeen SHP;51109
+Kymenlaakson SHP;50622
+Etelä-Karjalan SHP;37073
+Etelä-Savon SHP;30787
+Itä-Savon SHP;10600
+Pohjois-Karjalan SHP;35439
+Pohjois-Savon SHP;49284
+Keski-Suomen SHP;50240
+Etelä-Pohjanmaan SHP;36279
+Vaasan SHP;50706
+Keski-Pohjanmaan SHP;20514
+Pohjois-Pohjanmaan SHP;89430
+Kainuun SHP;23784
+Länsi-Pohjan SHP;12389
+Lapin SHP;22128
+Helsingin ja Uudenmaan SHP;554116
+Kaikki Alueet;1446397
