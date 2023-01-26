@@ -2,59 +2,75 @@
 
 
 
-
 <html>
     <head>
         <title>Virhetilanne - THL kuutio- ja tiivistekäyttöliittymä</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-        <link rel="stylesheet" href="https://repo.thl.fi/sites/pivot/pivot-production/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="https://repo.thl.fi/sites/pivot/pivot-production/webjars/source-sans-pro/2.0.10/source-sans-pro.css" />
-        <link rel="stylesheet" href="/pivot/css/style.css" />
-        <link rel="stylesheet" href="/pivot/css/summary.css" />
+        <link rel="stylesheet" href="/pivot/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/pivot/fonts/source-sans-pro/2.0.10/source-sans-pro.css">
+        <link rel="stylesheet" href="/pivot/css/style.css">
+        <link rel="stylesheet" href="/pivot/css/summary.css">
         <!--[if lt IE 9]>
-          <script src="https://repo.thl.fi/sites/pivot/pivot-production/js/html5shiv.js"></script>
-          <script src="https://repo.thl.fi/sites/pivot/pivot-production/js/respond.min.js"></script>
+          <script src="/pivot/js/html5shiv.js"></script>
+          <script src="/pivot/js/respond.min.js"></script>
         <![endif]-->
-
-
     </head>
     <body class="common">
-
-    <header class="summary-header container">
-        <h1>Virhetilanne</h1>
-        <div class="logo">
-            <img src="https://repo.thl.fi/sites/pivot/pivot-production/images/THL_tunnus_pitka_fi_RGB.svg">
+  <header role="banner" class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 col-sm-12 logo-and-text d-flex align-items-center">
+          <img class="logo" src="/pivot/images/THL_abbreviated.svg" alt="Terveyden ja hyvinvoinnin laitos">
+          <h1>
+             
+              Virhetilanne
+          </h1>
+          <div class="mobile-menu-container">
+            <button class="btn btn-secondary mobile-menu-btn" type="button" id="mobileMenuBtn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu" aria-label="Valikkopainike">
+                <i class="fas fa-bars mobile-menu-icon"></i>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu" aria-label="Valikko">
+              <div class="offcanvas-header">
+                <img class="menu-logo d-inline" src="/pivot/images/THL_abbreviated.svg" alt="Terveyden ja hyvinvoinnin laitos">
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Sulje"></button>
+              </div>
+              <div class="offcanvas-body">
+                <div class="btn-group-vertical menu-group" role="group">
+                  <a href="https://thl.fi/tikuohjeet" target="_blank" class="btn btn-default">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Ohjeet</span>
+                    <span class="sr-only">Avautuu uuteen ikkunaan<</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </header>
-
-    <div class="stripe">
+        <div class="col-2 lang-menu-container">
+          <div class="dropdown" id="languages" role="navigation" aria-labelledby="languages">
+          </div>
+        </div>
     </div>
-    <div class="summary-body container">
-   	 	<div class="summary-content">
-	      <h2>Pyyntöä käsitellessä tapahtui virhe</h2>
-	     	<p>Pyyntöä käsitellessä tapahtui odottamaton virhetilanne. Virhetilanne on kirjattu palvelun lokiin. Huomioithan, että palvelu on yhä kehitysvaiheessa.</p>
-      </div>
-    </div>
-
-  <footer class="default">
+  </header>
+        <div class="toolbar-control"></div>
+        <div class="summary-body container pt-3">
+            <div class="summary-content">
+                    <h2>Pyyntöä käsitellessä tapahtui virhe</h2>
+                    <p>Pyyntöä käsitellessä tapahtui odottamaton virhetilanne. Virhetilanne on kirjattu palvelun lokiin. Huomioithan, että palvelu on yhä kehitysvaiheessa.</p>
+            </div>
+        </div>
+  <footer class="default d-flex align-items-center" role="contentinfo">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xs-12">
-          <a title="Terveyden ja hyvinvoinnin laitos" href="http://thl.fi/">
-   	        <img class="footer-logo" src="https://repo.thl.fi/sites/pivot/pivot-production/images/THL.svg"/>
-   	      </a>
+        <div class="col-lg-8 col-md-12">
+          &copy; Terveyden ja hyvinvoinnin laitos 2023
         </div>
-      </div>
+              </div>
     </div>
   </footer>
-
-    <script src="https://repo.thl.fi/sites/pivot/pivot-production/js/jquery.js"></script>
-    <script src="https://repo.thl.fi/sites/pivot/pivot-production/js/jquery-ui.js"></script>
-    <script src="https://repo.thl.fi/sites/pivot/pivot-production/js/jquery.ui.touch-punch.min.js"></script>
-    <script src="https://repo.thl.fi/sites/pivot/pivot-production/js/bootstrap.bundle.min.js"></script>
-
-    <script src="/pivot/js/google-analytics.min.js"></script>
+        <script src="/pivot/js/jquery.js"></script>
+        <script src="/pivot/js/jquery-ui.js"></script>
+        <script src="/pivot/js/jquery.ui.touch-punch.min.js"></script>
+        <script src="/pivot/js/bootstrap.bundle.min.js"></script>
+        <script src="/pivot/js/google-analytics.min.js"></script>
     </body>
 </html>
