@@ -9,7 +9,7 @@ on:
         - master
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 13 * * *'
+    #- cron:  '0 13 * * *'
 jobs:
   # This workflow contains a single job called "build"
   build:
