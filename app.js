@@ -110,7 +110,8 @@ function getLastUpdated() {
     xhr.onload = function () {
         var status = xhr.status;
         if (status === 200) {
-            document.getElementById('lastUpdated').innerHTML = 'Tilastot päivitetty viimeeksi ' + timeago.format(new Date(xhr.response[0].commit.author.date), 'fi');
+            //document.getElementById('lastUpdated').innerHTML = 'Tilastot päivitetty viimeeksi ' + timeago.format(new Date(xhr.response[0].commit.author.date), 'fi');
+            document.getElementById('lastUpdated').innerHTML = 'Tilastot päivitetty viimeeksi ' + timeago.format(new Date("2021-12-31T08:34:25Z"), 'fi');
         }
     };
     xhr.send();
@@ -385,9 +386,9 @@ dataFromCsv('https://raw.githubusercontent.com/ahnl/coronavirus-finland/master/d
                 for (var property in regionData) {
                     if (regionData.hasOwnProperty(property)) {
 
-                        var shade = -(0.04 * regionData[property]);
-                        if (shade < -50) {
-                            shade = -50;
+                        var shade = -(0.004 * regionData[property]);
+                        if (shade < -70) {
+                            shade = -70;
                         }
 
                         console.log(property + ' ' + shade + ' ' + regionData[property]);
